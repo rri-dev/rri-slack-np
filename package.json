@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Toolset for interacting with Slack.",
   "dependencies": {
     "@slack/web-api": "^7.9.2",
     "dotenv": "^16.5.0",
