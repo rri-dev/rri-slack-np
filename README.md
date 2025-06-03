@@ -19,6 +19,8 @@ const svc = new SlackService();
 svc.sendMessage(`new message at ${new Date().toISOString()}`);
 ```
 
+# TODO: Migrate / consolidate slack code in other apps to this repo/package.
+
 ---
 
 # Notes about Developing the Package
