@@ -27,9 +27,7 @@ export class SlackService {
     async sendMessage(message: string, channelId?: string): Promise<void> {
 
         const logPrefix = '::SlackService--sendMessage::';
-        const channel = channelId || this.defaultChannel
-        console.log(`token:${this.token}`);
-        console.log(`channel:${channel}`);
+        const channel = channelId || this.defaultChannel;
 
         try {
             await this.client.chat.postMessage({
