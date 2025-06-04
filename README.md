@@ -21,6 +21,15 @@ svc.sendMessage(`new message at ${new Date().toISOString()}`);
 
 # TODO: Migrate / consolidate slack code in other apps to this repo/package.
 
+# Release Notes
+
+<details>
+   <summary>
+      Release notes - current
+   </summary>
+   <a href="/release_notes/2025_06_04.md">2025-06-04</a> - Implement Slack Service as NPM Package<br />
+</details>
+
 ---
 
 # Notes about Developing the Package
