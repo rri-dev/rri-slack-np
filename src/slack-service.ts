@@ -49,19 +49,19 @@ export class SlackService {
 
     }
 
-    async sendCsv(headers: string[], rows: Record<string, string>[], channelId?: string): Promise<void> {
+    async sendCsv(headers: string[], rows: Record<string, any>[], channelId?: string, filename?: string): Promise<void> {
 
         const logPrefix = '::service--SlackService--sendCsvContent::';
         const channel = channelId || this.defaultChannel;
 
-        const tempDir = os.tmpdir(), fileName = this.randStr(10);
+        const tempDir = os.tmpdir(), fileName = filename || this.randStr(10);
         const tempFilePath = `${tempDir}/${fileName}.csv`;
         
         try {
 
             const csv = headers.join(',') + '\n' + rows.map(row =>
-                headers.map(header => `"${String(row[header]).replace(/"/g, "")}"`).join(','),
-            ).join('\n');
+                headers.map(header => `"${String(row[header]).replace(/"/g, "")}"`).join(',')
+                ).join('\n');
 
             console.log('csv:',csv);
 
