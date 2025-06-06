@@ -49,6 +49,25 @@ export class SlackService {
 
     }
 
+    /**
+        * Sends a CSV file to Slack.
+        *
+        * @param headers - CSV column headers, only include the fields you want to send.
+        * @param rows - Array of row objects.
+        * @param channelId - Optional Slack channel to send to.
+        * @param filename - Optional custom filename to be displayed above file in slack.
+        * @returns Promise that resolves when the file is sent.
+        *
+        * @example
+        * const headers = ['Name', 'Email'];
+        * const rows = [
+        * { Name: 'Josh', Email: 'Josh@example.com' }, 
+        * { Name: 'Jane', Email: 'jane@example.com'}
+        * ];
+        *
+        * const slack = new SlackService();
+        * await slack.sendCsv(headers, rows, '#general', 'Users');
+     */
     async sendCsv(headers: string[], rows: Record<string, any>[], channelId?: string, filename?: string): Promise<void> {
 
         const logPrefix = '::service--SlackService--sendCsvContent::';
